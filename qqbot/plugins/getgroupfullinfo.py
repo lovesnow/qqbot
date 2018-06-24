@@ -36,4 +36,4 @@ def onUpdate(bot, tinfo):
             groups = bot.List('group', group_name)
             if len(groups) >= 1:
                 group = groups[0]  # 获取第一个
-                bot.contactdb.db.Modify('group', group, {'qq':group_qq})  # 更新qq号
+                bot.contactdb.db.Modify('group', group, {'qq':str(group_qq)})  # 更新qq号

@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from qqbot.utf8logger import INFO
+
 '''
 本插件启动时加载使用方法如下：
 
@@ -36,4 +38,5 @@ def onUpdate(bot, tinfo):
             groups = bot.List('group', group_name)
             if len(groups) >= 1:
                 group = groups[0]  # 获取第一个
-                bot.contactdb.db.Modify('group', group, {'qq':str(group_qq)})  # 更新qq号
+                bot.contactdb.db.Modify('group', group, qq=str(group_qq))  # 更新qq号
+                INFO('[组员详细信息插件]组名称:%s设置群号为:%s', group_name, group_qq)
